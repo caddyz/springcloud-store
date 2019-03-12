@@ -88,7 +88,7 @@ export const SET_RECOMMEND_INFO = (state, data) => {
   state.recommend = data;
 };
 
-// 设置收获地址
+// 设置收货地址
 export const SET_USER_ADDRESS = (state, data) => {
   state.address = data;
 };

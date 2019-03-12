@@ -20,7 +20,8 @@ export default {
         package: '4.7英寸-深邃蓝',
         price: 28,
         title: '苹果8/7手机壳iPhone7 Plus保护壳全包防摔磨砂硬外壳',
-        createAt: '2018-06-06 20:06:08'
+        createAt: '2018-06-06 20:06:08',
+        orderStatus: '未发货'
       }],
       columns: [
         {
@@ -71,6 +72,12 @@ export default {
           title: '购买时间',
           width: 120,
           key: 'createAt',
+          align: 'center'
+        },
+        {
+          title: '订单状态',
+          width: 120,
+          key: 'orderStatus',
           align: 'center'
         }
       ]
