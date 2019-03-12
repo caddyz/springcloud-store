@@ -17,6 +17,7 @@
 <script>
 import store from '@/vuex/store';
 import { mapMutations } from 'vuex';
+import api from '@/api/api';
 export default {
   name: 'CheckPhone',
   data () {
@@ -41,10 +42,14 @@ export default {
     ...mapMutations(['SET_SIGN_UP_SETP']),
     getcheckNum () {
       if (this.formValidate.phone.length === 11) {
-        this.$Message.success({
-          content: '验证码为: 1234',
-          duration: 6,
-          closable: true
+        api.checkUserPhoneNumber(this.formValidate.phone).then(response => {
+          if (response.status === 200) {
+            this.$Message.success({
+              content: '验证码为: 1234',
+              duration: 6,
+              closable: true
+            });
+          }
         });
       } else {
         this.$Message.error({
